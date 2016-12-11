@@ -1,9 +1,8 @@
 local Module = "Boss Quality Of Life"
-local Creater = "Chris"
-local function loadModule()
-    Print("Loaded "..Module.." by "..Creator)
+local Creator = "Chris"
+function loadModule()
     LoadFile("Modules\\BossQualityOfLife\\Bosses\\Helya\\Helya.lua")
-    LoadFile("Modules\\BossQualityOfLife\\Module.lua")
+    Print("Loaded "..Module.." by "..Creator)
 end
 
 loadModule()

@@ -74,6 +74,5 @@ function rotationSelect()
         vengeanceDemonHunterRotation()
     else
         print("error")
-        end
-    end
+	end
 end

@@ -1,5 +1,5 @@
 local WowAddon = GetWoWDirectory() .. "\\" .. "Interface" .. "\\" ..  "Addons" .. "\\"
-local AddonName = "Sana"
+local AddonName = "Sanctus"
 local Root =  WowAddon .. AddonName .. "\\"
 
 
@@ -32,10 +32,15 @@ LoadFile("Managers\\enemyManager.lua")
 LoadFile("Managers\\groupManager.lua")
 LoadFile("Managers\\locationManager.lua")
 LoadFile("Managers\\rotationManager.lua")
+LoadFile("Managers\\Inventory\\useItem.lua")
+LoadFile("Managers\\Unit\\health.lua")
+LoadFile("Managers\\Unit\\power.lua")
 
 --    UnitAuras
 LoadFile("Auras\\UnitBuff.lua")
 LoadFile("Auras\\UnitDeBuff.lua")
+
+LoadFile("Modules\\Modules.lua")
 
 --    Rotations
 function loadRestorationDruid()
