@@ -35,13 +35,19 @@ LoadFile("Managers\\rotationManager.lua")
 LoadFile("Managers\\Inventory\\useItem.lua")
 LoadFile("Managers\\Unit\\health.lua")
 LoadFile("Managers\\Unit\\power.lua")
-
+LoadFile("Managers\\Spells\\cast.lua")
+LoadFile("Managers\\combatManager.lua")
+LoadFile("Managers\\Talents\\talents.lua")
 --    UnitAuras
 LoadFile("Auras\\UnitBuff.lua")
 LoadFile("Auras\\UnitDeBuff.lua")
 
 LoadFile("Modules\\Modules.lua")
 
+LoadFile("Rotations\\GeneralSpells.lua")
+
+--      Spells
+LoadFile("Rotations\\DeathKnight\\Frost\\frostSpells.lua")
 --    Rotations
 function loadRestorationDruid()
     LoadFile("Rotations\\Druid\\Restoration\\bRestorationDruid.lua")
@@ -68,10 +74,10 @@ function loadBloodDeathKnight()
     LoadFile("Rotations\\DeathKnight\\Blood\\BloodNormal.lua")
 end
 
-function loadFrostDeathKnight()
+--function loadFrostDeathKnight()
     LoadFile("Rotations\\DeathKnight\\Frost\\bFrostDeathKnight.lua")
     LoadFile("Rotations\\DeathKnight\\Frost\\FrostNormal.lua")
-end
+--end
 
 function loadUnholyDeathKnight()
     LoadFile("Rotations\\DeathKnight\\Unholy\\bUnholyDeathKnight.lua")

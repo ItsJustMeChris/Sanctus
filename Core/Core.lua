@@ -1,4 +1,4 @@
-local version = 1
+local version = 1.1
 toggle = false
 function start()
 	MainFrame = CreateFrame("FRAME", nil, UIParent)
@@ -10,6 +10,7 @@ function update(self, elapsed)
 	local throttle = 0
 	local throttle = throttle + elapsed
 	if toggle and throttle <= .450 then
+		rotationSelect()
 		throttle = 0
 	end
 end
@@ -42,7 +43,9 @@ function handler(msg, editbox)
       	Print("Debugging")
     elseif msg == "help" then
         listCommands()
-    else
+	elseif msg == "l0l1dk" then
+		Print("Isn't l0l1dk amazing!")
+	else
 		Print("Invalid Command: |cFFFF0000" .. msg .. "|r try /sanctus help")
   end
 end
