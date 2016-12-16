@@ -40,9 +40,9 @@ function handler(msg, editbox)
   	if msg == "toggle" then
   		toggleSanctus()
 	elseif msg == "debug" then
-      	Print("Debugging")
-    elseif msg == "help" then
-        listCommands()
+      	        Print("Debugging")
+        elseif msg == "help" then
+                listCommands()
 	elseif msg == "l0l1dk" then
 		Print("Isn't l0l1dk amazing!")
 	else
