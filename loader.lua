@@ -32,6 +32,7 @@ LoadFile("Managers\\enemyManager.lua")
 LoadFile("Managers\\groupManager.lua")
 LoadFile("Managers\\locationManager.lua")
 LoadFile("Managers\\rotationManager.lua")
+LoadFile("Managers\\Events\\partyEvents.lua")
 LoadFile("Managers\\Inventory\\useItem.lua")
 LoadFile("Managers\\Unit\\health.lua")
 LoadFile("Managers\\Unit\\power.lua")
@@ -109,7 +110,7 @@ LoadFile("Rotations\\GeneralSpells.lua")
 --end
 
 --function LoadArcaneMage()
-    LoadFile("Rotations\\Mage\\Arcane\\bArcaneMange.lua")
+    LoadFile("Rotations\\Mage\\Arcane\\bArcaneMage.lua")
     LoadFile("Rotations\\Mage\\Arcane\\ArcaneNormal.lua")
 --end
 
@@ -185,7 +186,7 @@ LoadFile("Rotations\\GeneralSpells.lua")
 
 --function LoadSubtletyRogue()
     LoadFile("Rotations\\Rogue\\Subtlety\\bSubtletyRogue.lua")
-    LoadFile("Rotations\\Rogue\\Subtlety\\SubtletyNormal.lua")
+    LoadFile("Rotations\\Rogue\\Subtlety\\SubltetyNormal.lua")
 --end
 
 --function LoadElementalShaman()
