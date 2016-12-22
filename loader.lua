@@ -26,6 +26,9 @@ end
 --    Core
 LoadFile("Core\\Core.lua")
 
+--    Misc
+LoadFile("Misc\\type.lua")
+
 --    Managers
 LoadFile("Managers\\bossManager.lua")
 LoadFile("Managers\\enemyManager.lua")
@@ -36,8 +39,10 @@ LoadFile("Managers\\Events\\partyEvents.lua")
 LoadFile("Managers\\Inventory\\useItem.lua")
 LoadFile("Managers\\Unit\\health.lua")
 LoadFile("Managers\\Unit\\power.lua")
+LoadFile("Managers\\Unit\\unit.lua")
 LoadFile("Managers\\Spells\\cast.lua")
 LoadFile("Managers\\Spells\\place.lua")
+LoadFile("Managers\\Spells\\spellCooldown.lua")
 LoadFile("Managers\\combatManager.lua")
 LoadFile("Managers\\Talents\\talents.lua")
 --    UnitAuras
@@ -61,6 +66,7 @@ LoadFile("Rotations\\GeneralSpells.lua")
 --function loadGuardianDruid()
     LoadFile("Rotations\\Druid\\Guardian\\bGuardianDruid.lua")
     LoadFile("Rotations\\Druid\\Guardian\\GuardianNormal.lua")
+    LoadFile("Rotations\\Druid\\Guardian\\guardianSpells.lua")
 --end
 
 --function loadBalanceDruid()

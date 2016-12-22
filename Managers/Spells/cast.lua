@@ -1,14 +1,18 @@
 function Cast(spell, target)
-    CastSpellByID(spell, target)
-end
-
-function castName(spell, target)
-    CastSpellbyName(spell, target)
+    local spellname = GetSpellInfo(spell)
+    if isNumber(spell) then
+        CastSpellByID(spell,target)
+        Debug("Casted "..spell.." "..spellname.." on "..target)
+    else
+        CastSpellByName(spell,target)
+        Debug("Casted "..spell.." "..spellname.." on "..target)
+    end
 end
 
 function shouldCast(target)
     if combat(target) then
         return true
-    else return false
+    else
+        return false
     end
 end

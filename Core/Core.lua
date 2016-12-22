@@ -1,5 +1,8 @@
+if not IsTrialAccount() then
+
 local version = 1.1
 toggle = false
+debug = false
 function start()
 	MainFrame = CreateFrame("FRAME", nil, UIParent)
 	MainFrame:SetScript("OnUpdate", update)
@@ -29,6 +32,23 @@ function toggleSanctus()
     end
 end
 
+function toggleDebugger()
+    if debug then
+        debug = false
+        Debug("Disabled")
+    else
+        debug = true
+        Debug("Enabled")
+    end
+end
+
+function Debug(msg)
+	if debug then
+		Print("Debugger Caught "..msg)
+	end
+end
+
+
 function listCommands()
     Print("Current Commands")
     Print("help:  Reveals this list")
@@ -40,11 +60,14 @@ function handler(msg, editbox)
   	if msg == "toggle" then
   		toggleSanctus()
 	elseif msg == "debug" then
-      	        Print("Debugging")
-        elseif msg == "help" then
-                listCommands()
+      	Print("Debugging")
+		toggleDebugger()
+    elseif msg == "help" then
+        listCommands()
 	elseif msg == "l0l1dk" then
 		Print("Isn't l0l1dk amazing!")
+	elseif msg == "" then
+		Print("Just Do It.  ")
 	else
 		Print("Invalid Command: |cFFFF0000" .. msg .. "|r try /sanctus help")
   end
@@ -52,3 +75,5 @@ end
 SlashCmdList["SANCTUS"] = handler;
 
 start()
+else print("Stop using trial accounts bruh")
+end

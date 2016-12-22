@@ -8,7 +8,7 @@ function getGroup()
             local Unit = (groupType .. i)
             if groupType == "party" and i == GetNumGroupMembers() then
                 table.insert(Group, {Unit = ObjectGUID("player")})
-            elseif ObjectExists(Unit) and Group[i].Unit ~= Unit then
+                elseif ObjectExists(Unit) and Group[i].Unit ~= Unit then
                 table.insert(Group, {Unit = ObjectGUID(Unit), Role=UnitGroupRolesAssigned(Unit)})
             elseif GetNumGroupMembers() == 0 then
                 table.insert(Group, {Unit = "player", Role="HEALER"})

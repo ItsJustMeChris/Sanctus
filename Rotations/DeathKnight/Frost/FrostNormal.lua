@@ -81,7 +81,7 @@ function frostDeathKnightRotation()
 --actions.generic+=/hungering_rune_weapon,if=talent.breath_of_sindragosa.enabled&cooldown.breath_of_sindragosa.remains>15
 --actions.generic+=/empower_rune_weapon,if=!talent.breath_of_sindragosa.enabled
 --actions.generic+=/hungering_rune_weapon,if=!talent.breath_of_sindragosa.enabled
---
+--Just Do It.  
 --actions.machinegun=frost_strike,if=buff.icy_talons.remains<=gcd|runic_power>=80
 --actions.machinegun+=/howling_blast,target_if=!dot.frost_fever.ticking&buff.icy_talons.remains>=gcd+0.1
 --actions.machinegun+=/howling_blast,if=buff.rime.up&!buff.obliteration.up
