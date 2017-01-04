@@ -39,8 +39,14 @@ function frostMageRotation()
       -- IceLance if HasTalent(GlacialSpike) and HasBuff(FingersOfFrost) and BuffStack(ChainReaction) = BuffMaxStack(ChainReaction)
   -- Frozen Orb
       -- Cast frozen_orb on Cd
-  --Ice Nova 
+      if castable("target", mage.frozenorb)then
+          cast(mage.frozenorb, "target")
+      end
+  --Ice Nova
       -- ice_nova
+      if talent(maget.IceNova) and castable("target", mage.icenova)then
+          cast(mage.icenova, "target")
+      end
   --Comet Storm
       -- comet_storm
       if talent(maget.CometStorm) and castable("target", mage.cometstorm)then
@@ -48,6 +54,7 @@ function frostMageRotation()
       end
   -- Ebonbolt (AMR)
       -- Ebonbolt if BuffStack(FingersOfFrost) < BuffMaxStack(FingersOfFrost) - 2 and not HasTalent(GlacialSpike)
+      if buff(mage.fingersoffrost, "player") 
   -- Frostbolt
       -- frostbolt
       if castable("target", mage.frostbolt) then
