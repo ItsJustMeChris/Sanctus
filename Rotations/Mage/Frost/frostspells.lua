@@ -2,11 +2,13 @@ mage = {
     blizzard = 190356,
     coneofcold = 120,
     cometstorm = 153595,
+    ebonbolt = 228599,
     flurry = 44614,
     freeze = 231596,
     frostbolt = 116,
     frostbomb = 112948,
     frozenorb = 84714,
+    glacialspike = 199786,
     icelance = 30455,
     icenova = 157997,
     icyveins = 12472,
@@ -20,6 +22,7 @@ mage = {
     icefloes = 108839,
     icebarrier = 11426,
     winterschill = 228358,
+
 
 }
 
