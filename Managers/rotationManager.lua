@@ -1,4 +1,5 @@
 function rotationSelect()
+	if toggle then
 	local playerSpec = GetSpecializationInfo(GetSpecialization())
 	if playerSpec == 62 then
         arcaneMageRotation()
@@ -75,4 +76,5 @@ function rotationSelect()
     else
         print("error")
 	end
+end
 end

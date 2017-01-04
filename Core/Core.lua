@@ -1,22 +1,14 @@
-if not IsTrialAccount() then
-
 local version = 1.1
 toggle = false
 debug = false
 function start()
-	MainFrame = CreateFrame("FRAME", nil, UIParent)
-	MainFrame:SetScript("OnUpdate", update)
 	Print("Loaded Sanctus Version "..version)
+	AddTimerCallback (.2,function()
+		rotationSelect()
+	end)
 end
 
-function update(self, elapsed)
-	local throttle = 0
-	local throttle = throttle + elapsed
-	if toggle and throttle <= .450 then
-		rotationSelect()
-		throttle = 0
-	end
-end
+
 
 function Print(msg)
     print("|cFF00FF00[Sanctus]|r "..msg)
@@ -75,5 +67,3 @@ end
 SlashCmdList["SANCTUS"] = handler;
 
 start()
-else print("Stop using trial accounts bruh")
-end

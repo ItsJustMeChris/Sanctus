@@ -1,16 +1,18 @@
-function Cast(spell, target)
+function cast(spell, target)
     local spellname = GetSpellInfo(spell)
-    if isNumber(spell) then
-        CastSpellByID(spell,target)
-        Debug("Casted "..spell.." "..spellname.." on "..target)
-    else
-        CastSpellByName(spell,target)
-        Debug("Casted "..spell.." "..spellname.." on "..target)
+    if ObjectExists(target) then
+        if isNumber(spell) then
+            CastSpellByID(spell,target)
+        else
+            CastSpellByName(spell,target)
+        end
     end
 end
 
-function shouldCast(target)
-    if combat(target) then
+function castable(tar, cd)
+    if ObjectExists(tar) and not UnitIsDeadOrGhost(tar) and cd == nil then
+        return true
+    elseif not UnitIsDeadOrGhost(tar) and spellcd(cd) == 0 then
         return true
     else
         return false

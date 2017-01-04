@@ -1,7 +1,7 @@
 outOfCombatPull = false
 
 function combat(target)
-    if UnitAffectingCombat("target") then
+    if UnitAffectingCombat(target) then
         return true
     else
         return false
