@@ -12,16 +12,11 @@ function spellcd(spell)
 end
 
 function charges(spell)
-  local duration = select(4, GetSpellCharges(spell))
-  local start = select(3, GetSpellCharges(spell))
-  local charges = select(1, GetSpellCharges(spell))
-  local maxcharges = select(2, GetSpellCharges(spell))
-  local time = start - GetTime()
-  local fractional =  duration - time
-  local check = math.abs(time / fractional * 2)
+  local charges,maxcharges,start,duration = GetSpellCharges(spell)
   if charges ~= maxcharges then
     local totalcharge = check + charges
-      return totalcharge
-  else return charges
+      return math.abs(time / (duration - (start - GetTime())) * 2)
+  else
+      return charges
   end
 end
