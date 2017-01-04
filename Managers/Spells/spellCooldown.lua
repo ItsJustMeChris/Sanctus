@@ -11,8 +11,16 @@ function spellcd(spell)
     end
 end
 
-function recharge(spell)
-    local cd = select(4,GetSpellCharges(spell))
-    local rechargetime = cd
-    return rechargetime
+  local duration = select(4, GetSpellCharges(spell))
+  local start = select(3, GetSpellCharges(spell))
+  local charges = select(1, GetSpellCharges(spell))
+  local maxcharges = select(2, GetSpellCharges(spell))
+  local time = start - GetTime()
+  local fractional =  duration - time
+  local check = math.abs(time / fractional * 2)
+  if charges ~= maxcharges then
+    local totalcharge = check + charges
+      return totalcharge
+  else return charges
+  end
 end
