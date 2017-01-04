@@ -39,7 +39,7 @@ function frostMageRotation()
       -- IceLance if HasTalent(GlacialSpike) and HasBuff(FingersOfFrost) and BuffStack(ChainReaction) = BuffMaxStack(ChainReaction)
   -- Frozen Orb
       -- Cast frozen_orb on Cd
-  --Ice Nova 
+  --Ice Nova
       -- ice_nova
   --Comet Storm
       -- comet_storm

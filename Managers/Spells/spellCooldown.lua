@@ -11,6 +11,7 @@ function spellcd(spell)
     end
 end
 
+function charges(spell)
   local duration = select(4, GetSpellCharges(spell))
   local start = select(3, GetSpellCharges(spell))
   local charges = select(1, GetSpellCharges(spell))
