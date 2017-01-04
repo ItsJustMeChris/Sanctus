@@ -129,8 +129,6 @@ LoadFile("Rotations\\GeneralSpells.lua")
 --function LoadFrostMage()
     LoadFile("Rotations\\Mage\\Frost\\bFrostMage.lua")
     LoadFile("Rotations\\Mage\\Frost\\FrostNormal.lua")
-    LoadFile("Rotations\\Mage\\Frost\\frostspells.lua")
-
 --end
 
 --function LoadBrewMasterMonk()

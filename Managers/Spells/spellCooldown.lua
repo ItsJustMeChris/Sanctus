@@ -11,8 +11,11 @@ function spellcd(spell)
     end
 end
 
-function recharge(spell)
-    local cd = select(4,GetSpellCharges(spell))
-    local rechargetime = cd
-    return rechargetime
+function charges(spell)
+  local charges,maxcharges,start,duration = GetSpellCharges(spell)
+  if charges ~= maxcharges then
+      return math.abs(time / (duration - (start - GetTime())) * 2) + charges
+  else
+      return charges
+  end
 end

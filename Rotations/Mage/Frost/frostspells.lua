@@ -11,7 +11,6 @@ mage = {
     icenova = 157997,
     icyveins = 12472,
     summonwaterelemental = 31687,
--- Buffs
     brainfreeze = 190447,
     frostbomb = 112948,
     fingersoffrost = 112965,

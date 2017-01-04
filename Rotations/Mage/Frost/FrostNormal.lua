@@ -54,7 +54,7 @@ function frostMageRotation()
       end
   -- Ebonbolt (AMR)
       -- Ebonbolt if BuffStack(FingersOfFrost) < BuffMaxStack(FingersOfFrost) - 2 and not HasTalent(GlacialSpike)
-      if buff(mage.fingersoffrost, "player") 
+      if buff(mage.fingersoffrost, "player")
   -- Frostbolt
       -- frostbolt
       if castable("target", mage.frostbolt) then

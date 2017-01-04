@@ -1,7 +1,7 @@
 warrior = {
     mortalstrike = 12294,
     charge = 100,
-    execute = 5308,
+    execute = 163201,
     stoneheart = 225947,
     colossussmash = 167105,
     battlecry = 1719,
@@ -18,6 +18,11 @@ warrior = {
     bladestorm = 227847,
     cleave = 845,
     avatar = 107574,
+    deadlycalm = 166587,
+    autoattack = 6603,
+    bloodfury = 20572,
+    precisestrikes = 209492,
+    
 }
 
 warriort = {
