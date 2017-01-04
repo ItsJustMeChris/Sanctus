@@ -15,7 +15,7 @@ function charges(spell)
   local charges,maxcharges,start,duration = GetSpellCharges(spell)
   if charges ~= maxcharges then
     local totalcharge = check + charges
-      return math.abs(time / (duration - (start - GetTime())) * 2)
+      return math.abs(time / (duration - (start - GetTime())) * 2) + charges
   else
       return charges
   end
