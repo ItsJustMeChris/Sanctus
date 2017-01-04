@@ -83,7 +83,7 @@ LoadFile("Rotations\\GeneralSpells.lua")
 --function loadFrostDeathKnight()
     LoadFile("Rotations\\DeathKnight\\Frost\\bFrostDeathKnight.lua")
     LoadFile("Rotations\\DeathKnight\\Frost\\FrostNormal.lua")
-    LoadFile("Rotations\\DeathKnight\\Frost\\frostSpells.lua")
+    LoadFile("Rotations\\DeathKnight\\Frost\\frostspells.lua")
 --end
 
 --function loadUnholyDeathKnight()
@@ -129,6 +129,8 @@ LoadFile("Rotations\\GeneralSpells.lua")
 --function LoadFrostMage()
     LoadFile("Rotations\\Mage\\Frost\\bFrostMage.lua")
     LoadFile("Rotations\\Mage\\Frost\\FrostNormal.lua")
+    LoadFile("Rotations\\Mage\\Frost\\frostspells.lua")
+
 --end
 
 --function LoadBrewMasterMonk()
