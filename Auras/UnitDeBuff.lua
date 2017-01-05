@@ -19,6 +19,10 @@ end
 
 function dbuffstack(check, target)
     if dbuff(check, target) then
-        return select(4, UnitDebuff(target, spell))
+        local stacks = select(4, UnitDebuff(target, check))
+        if stacks == nil then
+            stacks = 0 
+        end
+                 return stacks
     end
 end
