@@ -39,6 +39,6 @@ guardianSpell = {
     moonfire = 8921,
     pulverize = 80313,
     incarnationguardianofursoc = 102558,
-    thrash = 106832,
+    thrash = 77758,
     charge = 16979,
 }
