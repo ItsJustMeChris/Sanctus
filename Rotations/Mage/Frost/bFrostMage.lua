@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+function incombat(Unit)
+	if UnitAffectingCombat(Unit) then
+		return true
+	else
+		return false
+	end
+end
+
+>>>>>>> origin/master
 function summonpet ()
   if IsPetActive() then
     Debug("Pet is active")

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 function frostMageRotation()
   summonpet()
@@ -11,6 +12,14 @@ function frostMageRotation()
   -- changed to combat
   ------------------------------
   if combat("player") then
+=======
+
+function frostMageRotation()
+  summonpet()
+  if artifact(magea.icyhand) then icehand = 1 else icehand = 0 end
+  -------------- Combat Rotation Start -------------------------
+  if incombat("player") then
+>>>>>>> origin/master
     -- Pet Attack
       if not UnitIsUnit("pettarget","target") then
       PetAttack()
@@ -44,6 +53,7 @@ function frostMageRotation()
         -- SimC | actions+=/frost_bomb,if=debuff.frost_bomb.remains<action.ice_lance.travel_time&buff.fingers_of_frost.react>0
     -- Ice Lance
         -- SimC | actions+=/ice_lance,if=buff.fingers_of_frost.react>0&cooldown.icy_veins.remains>10|buff.fingers_of_frost.react>2
+<<<<<<< HEAD
 
 
         ------------------------------
@@ -51,6 +61,12 @@ function frostMageRotation()
         ------------------------------
         if  castable("target", mage.icelance) and ((buffstack(mage.fingersoffrost, "player") > 0) and (spellcd(mage.icyveins) > 10)) or (buffstack(mage.fingersoffrost, "player") > 2)then
                 cast(mage.icelance, "target")
+=======
+        if  ((buffstack(mage.fingersoffrost, "player") > 0) and (spellcd(mage.icyveins) > 10)) or (buffstack(mage.fingersoffrost, "player") > 2)then
+            if castable("target", mage.icelance)then
+                cast(mage.icelance, "target")
+            end
+>>>>>>> origin/master
         end
     -- Frozen Orb
         -- SimC | actions+=/frozen_orb
