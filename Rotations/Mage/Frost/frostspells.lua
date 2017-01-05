@@ -23,7 +23,6 @@ mage = {
     icebarrier = 11426,
     winterschill = 228358,
 
-
 }
 
 maget = {
@@ -52,6 +51,6 @@ maget = {
 }
 
 magea = {
-    ebonbolt = 214634,
-    icyhand = 220817,
+    ebonbolt = 783,
+    icyhand = 795,
 }
