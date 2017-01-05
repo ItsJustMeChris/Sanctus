@@ -1,17 +1,18 @@
 function artifact(id)
-  if HasArtifactEquipped() then
-    if not ArtifactFrame:IsShown() then
-      SocketInventoryItem(16)
-  else return false
+    if HasArtifactEquipped() then
+        if not ArtifactFrame or not ArtifactFrame:IsShown() then
+            SocketInventoryItem(16)
+        end
+        local rank = select(3,C_ArtifactUI.GetPowerInfo(id))
+        local rankmax = select(4,C_ArtifactUI.GetPowerInfo(id))
+        print(rank.." "..rankmax)
+        if rank > 0 then
+            HideUIPanel(ArtifactFrame)
+            return true
+        else
+            HideUIPanel(ArtifactFrame)
+            return false
+        end
     end
-    local rank = select(3,C_ArtifactUI.GetPowerInfo(id))
-    local rankmax = select(4,C_ArtifactUI.GetPowerInfo(id))
-    if rank > 0 then
-        return true
-    else return false
-  end
-  if ArtifactFrame:IsShown() then
-    HideUIPanel(ArtifactFrame)
-    end
-end
+
 end

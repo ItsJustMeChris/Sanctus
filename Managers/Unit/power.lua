@@ -1,5 +1,5 @@
 function power(unit)
-    return (UnitPowerMax(unit)) / (UnitPower(unit)) * (100)
+    return (UnitPower(unit)) / (UnitPowerMax(unit)) * (100)
 end
 
 function powerexact(unit)
