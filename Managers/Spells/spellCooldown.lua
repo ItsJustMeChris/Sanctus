@@ -3,7 +3,7 @@ function spellcd(spell)
     if time == 0 then
         return 0
     end
-    local cd = time + 1.5 + value - GetTime() - (select(4, GetNetStats()) / 1000)
+    local cd = time + 1.9 + value - GetTime() - (select(4, GetNetStats()) / 1000)
     if cd > 0 then
         return cd
     else

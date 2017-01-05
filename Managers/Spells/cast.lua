@@ -1,17 +1,9 @@
 function cast(spell, target)
     local spellname = GetSpellInfo(spell)
-    if ObjectExists(target) then
-        if isNumber(spell) then
-            CastSpellByID(spell,target)
-        else
-            CastSpellByName(spell,target)
-        end
-    end
+            CastSpellByName(spellname,target)
 end
 
 function castable(tar, cd)
-
-
     if ObjectExists(tar) and not UnitIsDeadOrGhost(tar) and cd == nil and distcheck(cd, tar) then
         return true
     elseif not UnitIsDeadOrGhost(tar) and spellcd(cd) == 0 and distcheck(cd, tar) then
@@ -27,7 +19,9 @@ function distcheck(spell, targ)
     if ObjectExists(targ) and distance(targ, "player") >= mindist and distance(targ, "player") <= maxdist then
         return true
     elseif mindist == 0 and maxdist == 0 then
-        return true
+        if ObjectExists(targ) and distance(targ, "player") >= 0 and distance(targ, "player") <= 8 then
+            return true
+        end
     else
         return false
     end

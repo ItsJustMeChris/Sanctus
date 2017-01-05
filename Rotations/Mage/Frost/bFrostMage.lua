@@ -1,3 +1,11 @@
+function summonpet ()
+  if IsPetActive() then
+    Debug("Pet is active")
+    else
+    Debug("No Pet active ... Summoning")
+    CastSpellByName("Summon Water Elemental", "")
+  end
+end
 
 -- Cooldowns
 function cooldowns ()
