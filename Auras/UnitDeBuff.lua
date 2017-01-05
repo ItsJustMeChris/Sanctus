@@ -18,11 +18,11 @@ function dbufftime(check, target)
 end
 
 function dbuffstack(check, target)
+    local spell = GetSpellInfo(check)
+    local stacks = select(4, UnitDebuff(target, spell))
     if dbuff(check, target) then
-        local stacks = select(4, UnitDebuff(target, check))
-        if stacks == nil then
-            stacks = 0 
-        end
-                 return stacks
+        return stacks
+    else
+        return 0
     end
 end
