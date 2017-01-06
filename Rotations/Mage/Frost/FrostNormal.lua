@@ -31,6 +31,9 @@ function frostMageRotation()
         if castable(mage.frostbolt, "target") and unitcasting(mage.waterjet, "pet") then
             cast(mage.frostbolt, "pettarget")
         end
+        if castable(mage.icelance, "target") and lastspell(mage.frostbolt) then
+            cast(mage.icelance, "target")
+        end
     -- Water Jet (AMR)
         -- water_jet,if=prev_gcd.frostbolt&buff.fingers_of_frost.stack<(2+artifact.icy_hand.enabled)&buff.brain_freeze.react=0
         if castable(mage.waterjet, "target") and lastspell(mage.frostbolt) and (buffstack(mage.fingersoffrost, "player") < (2 + icehand)) and (buffstack(mage.brainfreeze, "player") == 0)then
