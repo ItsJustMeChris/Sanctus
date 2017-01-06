@@ -10,10 +10,12 @@ AddEventCallback("COMBAT_LOG_EVENT_UNFILTERED", function(...)
 		if select(5, ...) == UnitName("player") then
       		 spelllast = select(12, ...)
 	  		 namelast = select(13, ...)
-                if spelllast == spellstart then
-			              Debug("Successfully Casted: "..spelllast.." "..namelast)
-			          return spelllast, namelast
+                if (spelllast == spellstart or spellstart == 0) then
+                    castsuccess = spelllast
+			              Debug("Successfully Casted: "..spelllast.." "..namelast..spellstart)
+			          return castsuccess
             end
+            spellstart = 0
   		end
     end
 end)
@@ -26,7 +28,8 @@ end)
 
 function lastspell(spell)
     if spell ~= nil then
-	       if spellstart == spelllast and (spelllast == spell or namelast == spell) then
+	       if (castsuccess == spell) then
+               spellstart = 0
 		         return true
 	        else
                 return false

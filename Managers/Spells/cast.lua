@@ -4,9 +4,9 @@ function cast(spell, target)
 end
 
 function castable(cd, tar)
-    if ObjectExists(tar) and not UnitIsDeadOrGhost(tar) and cd == nil and distcheck(cd, tar) and GetSpellCooldown(61304) == 0 then
+    if ObjectExists(tar) and not UnitIsDeadOrGhost(tar) and cd == nil and distcheck(cd, tar) and GetSpellCooldown(61304) == 0 and not UnitChannelInfo("player") and not UnitCastingInfo("player") then
         return true
-    elseif not UnitIsDeadOrGhost(tar) and spellcd(cd) == 0 and distcheck(cd, tar) and GetSpellCooldown(61304) == 0 then
+    elseif not UnitIsDeadOrGhost(tar) and spellcd(cd) == 0 and distcheck(cd, tar) and GetSpellCooldown(61304) == 0 and not UnitChannelInfo("player") and not UnitCastingInfo("player") then
         return true
     else
         return false
