@@ -21,6 +21,7 @@ mage = {
     rayoffrost = 205021,
     summonwaterelemental = 31687,
     timewarp = 80353,
+    waterjet = 135029,
     winterschill = 228358,
     zannesujourney = 226852,
 

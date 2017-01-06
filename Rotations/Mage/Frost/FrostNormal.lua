@@ -21,17 +21,21 @@ function frostMageRotation()
     -- AOE
     -------------- AOE End -------------------------
     -- Ice Lance + Flurry (AMR)
-    -- Function in Back end
     -------------- CD'S Start -------------------------
-    -- Cooldowns
+    -- CooldownsS
     -- Function in Back end
     -------------- CD'S END -------------------------
     -------------- Rotation 'S Start -------------------------
     -- Frost bolt w/ Water Jet (AMR)
         -- Frostbolt if IsPetCasting(PetWaterElemental, WaterJet)
+        if castable(mage.frostbolt, "target") and unitcasting(mage.waterjet, "pet") then
+            cast(mage.frostbolt, "pettarget")
+        end
     -- Water Jet (AMR)
         -- water_jet,if=prev_gcd.frostbolt&buff.fingers_of_frost.stack<(2+artifact.icy_hand.enabled)&buff.brain_freeze.react=0
-        -- WaterJet if BuffStack(FingersOfFrost) < BuffMaxStack(FingersOfFrost) and WasLastCast(Frostbolt) and not HasBuff(BrainFreeze) and not HasTalent(GlacialSpike)
+        if castable(mage.waterjet, "target") and lastspell(mage.frostbolt) and (buffstack(mage.fingersoffrost, "player") < (2 + icehand)) and (buffstack(mage.brainfreeze, "player") == 0)then
+            petcast(mage.waterjet, "pettarget")
+        end
     -- Ray of Frost (AMR)
         -- ray_of_frost,if=buff.icy_veins.up|(cooldown.icy_veins.remains>action.ray_of_frost.cooldown&buff.rune_of_power.down)
         -- if buff.icyVeins.exists or (cd.icyVeins > getCastTime(spell.rayOfFrost) and buff.runeOfPower.exists) then
