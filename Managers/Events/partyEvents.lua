@@ -17,9 +17,16 @@ end)
 AddEventCallback("PLAYER_REGEN_ENABLED", function()
 	openerfinished = false
 end)
+
+
 function lastspell(spell)
-	if spelllast == spell or namelast == spell then
-		return true
-	else return false
+    if spell ~= nil then
+	       if spelllast == spell or namelast == spell then
+		         return true
+	        else
+                return false
+        end
+    else
+        return spelllast
 	end
 end
