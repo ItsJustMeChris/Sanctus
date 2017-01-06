@@ -22,7 +22,7 @@ warrior = {
     autoattack = 6603,
     bloodfury = 20572,
     precisestrikes = 209492,
-    
+
 }
 
 warriort = {

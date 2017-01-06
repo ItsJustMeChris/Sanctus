@@ -3,7 +3,7 @@ function cast(spell, target)
             CastSpellByName(spellname,target)
 end
 
-function castable(tar, cd)
+function castable(cd, tar)
     if ObjectExists(tar) and not UnitIsDeadOrGhost(tar) and cd == nil and distcheck(cd, tar) and GetSpellCooldown(61304) == 0 then
         return true
     elseif not UnitIsDeadOrGhost(tar) and spellcd(cd) == 0 and distcheck(cd, tar) and GetSpellCooldown(61304) == 0 then
@@ -17,7 +17,7 @@ function distcheck(spell, targ)
     local mindist = select(5, GetSpellInfo(spell))
     local maxdist = select(6, GetSpellInfo(spell))
     if ObjectExists(targ) then
-        if distance(targ, "player") >= mindist and distance(targ, "player") <= maxdist then
+        if distance(targ, "player") >= mindist + UnitBoundingRadius(targ) and distance(targ, "player") <= maxdist + UnitBoundingRadius(targ) then
             Debug("Spell: "..spell..", Distance Minimum: "..mindist..", Distance Maximum: "..maxdist..", Casting: True")
             return true
         elseif mindist == 0 and maxdist == 0 then
