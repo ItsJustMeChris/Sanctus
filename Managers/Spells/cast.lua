@@ -18,16 +18,16 @@ function distcheck(spell, targ)
     local maxdist = select(6, GetSpellInfo(spell))
     if ObjectExists(targ) then
         if distance(targ, "player") >= mindist + UnitBoundingRadius(targ) and distance(targ, "player") <= maxdist + UnitBoundingRadius(targ) then
-            Debug("Spell: "..spell..", Distance Minimum: "..mindist..", Distance Maximum: "..maxdist..", Casting: True")
+            -- Debug("Spell: "..spell..", Distance Minimum: "..mindist..", Distance Maximum: "..maxdist..", Casting: True")
             return true
         elseif mindist == 0 and maxdist == 0 then
             if distance(targ, "player") >= 0 and distance(targ, "player") <= 25 then
-                Debug("Spell: "..spell..", Distance Minimum: "..mindist..", Distance Maximum: "..maxdist..", Casting: True")
+                -- Debug("Spell: "..spell..", Distance Minimum: "..mindist..", Distance Maximum: "..maxdist..", Casting: True")
                 return true
             end
         elseif mindist == 0 and maxdist > 0 then
             if distance(targ, "player") >= 0 and distance(targ, "player") <= maxdist then
-                Debug("Spell: "..spell..", Distance Minimum: "..mindist..", Distance Maximum: "..maxdist..", Casting: True")
+                --Debug("Spell: "..spell..", Distance Minimum: "..mindist..", Distance Maximum: "..maxdist..", Casting: True")
                 return true
             end
         else
