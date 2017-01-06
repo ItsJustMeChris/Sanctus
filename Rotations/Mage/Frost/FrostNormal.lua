@@ -36,7 +36,7 @@ function frostMageRotation()
         -- ray_of_frost,if=buff.icy_veins.up|(cooldown.icy_veins.remains>action.ray_of_frost.cooldown&buff.rune_of_power.down)
         -- if buff.icyVeins.exists or (cd.icyVeins > getCastTime(spell.rayOfFrost) and buff.runeOfPower.exists) then
         -- RayOfFrost if HasBuff(IcyVeins)
-        if talent(maget.RayofFrost) and castable(mage.rayoffrost, "target") and buff(mage.icyveins, "player")then -- OR LOGIC HALF DONE TODO
+        if castable(mage.rayoffrost, "target") and buff(mage.icyveins, "player")then -- OR LOGIC HALF DONE TODO
             cast(mage.rayoffrost, "target")
         end
     -- Flurry
@@ -48,7 +48,7 @@ function frostMageRotation()
         end
     -- Frozen Touch
         -- SimC | actions+=/frozen_touch,if=buff.fingers_of_frost.stack<=(0+artifact.icy_hand.enabled)&((cooldown.icy_veins.remains>30&talent.thermal_void.enabled)|!talent.thermal_void.enabled)
-        if talent(maget.FrozenTouch) and castable(mage.frozentouch, "target") and
+        if castable(mage.frozentouch, "target") and
         buffstack(mage.fingersoffrost, "player") <= (0 + icehand) and
         (spellcd(mage.icyveins) > 30 and talent(maget.ThermalVoid)) or
         not talent(maget.ThermalVoid)then
@@ -56,7 +56,7 @@ function frostMageRotation()
         end
     -- Frost Bomb
         -- SimC | actions+=/frost_bomb,if=debuff.frost_bomb.remains<action.ice_lance.travel_time&buff.fingers_of_frost.react>0
-        if talent(maget.FrostBomb) and castable(mage.frostbomb, "target") and dbufftime(mage.frostbomb, "target") < 2 and (buffstack(mage.fingersoffrost, "player") > 0) then
+        if castable(mage.frostbomb, "target") and dbufftime(mage.frostbomb, "target") < 2 and (buffstack(mage.fingersoffrost, "player") > 0) then
             cast(mage.frostbomb, "target")
         end
     -- Ice Lance
