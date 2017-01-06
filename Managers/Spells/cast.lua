@@ -36,3 +36,12 @@ function distcheck(spell, targ)
     else return false
     end
 end
+
+function petcast(id, tar)
+    local spell = GetSpellInfo(id)
+    for i=1, NUM_PET_ACTION_SLOTS do
+        if GetPetActionInfo(i) == spell then
+            CastPetAction(i, tar)
+        end
+    end
+end

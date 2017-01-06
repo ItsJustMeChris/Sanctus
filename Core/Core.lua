@@ -1,8 +1,9 @@
 local version = 1.1
+local ver = "|cFF2ECC71"..version.."|r"
+local user = UnitName("player")
 toggle = false
 debug = false
 function start()
-	Print("Loaded Sanctus Version "..version)
 	AddTimerCallback (.2,function()
 		rotationSelect()
 	end)
@@ -11,7 +12,7 @@ end
 
 
 function Print(msg)
-    print("|cFF00FF00[Sanctus]|r "..msg)
+    print("|cFFF27935[Sanctus]|r "..msg)
 end
 
 function toggleSanctus()
@@ -67,3 +68,7 @@ end
 SlashCmdList["SANCTUS"] = handler;
 
 start()
+
+AddEventCallback("PLAYER_ENTERING_WORLD", function()
+	Print("Loaded Sanctus Version "..ver)
+end)

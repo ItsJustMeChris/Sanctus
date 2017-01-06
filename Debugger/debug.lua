@@ -1,0 +1,23 @@
+----Debugger Levels
+----1
+----2
+----3
+----4
+----5
+----6
+----..
+--
+--local level1 = 0
+--local level2 = 0
+--local level3 = 0
+--local level4 = 0
+--local level5 = 0
+--local level6 = 0
+--
+--function toggleDebugger(lev)
+--    if level..lev == 0 then
+--        level..lev = 1
+--    else
+--        level..lev = 0
+--    end
+--end

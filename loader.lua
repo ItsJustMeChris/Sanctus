@@ -29,6 +29,8 @@ LoadFile("Core\\Core.lua")
 --    Misc
 LoadFile("Misc\\type.lua")
 
+--    Debugger
+LoadFile("Debugger\\debug.lua")
 --    Managers
 LoadFile("Managers\\bossManager.lua")
 LoadFile("Managers\\enemyManager.lua")
