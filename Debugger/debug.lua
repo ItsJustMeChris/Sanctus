@@ -6,14 +6,14 @@
 ----5
 ----6
 ----..
---debug = {
---    [1] = 0,
---    [2] = 0,
---    [3] = 0,
---    [4] = 0,
---    [5] = 0,
---    [6] = 0,    
---}
+--
+--local level1 = 0
+--local level2 = 0
+--local level3 = 0
+--local level4 = 0
+--local level5 = 0
+--local level6 = 0
+--
 --function toggleDebugger(lev)
 --    if level..lev == 0 then
 --        level..lev = 1
