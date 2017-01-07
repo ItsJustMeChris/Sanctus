@@ -20,19 +20,25 @@ function frostMageRotation()
     -------------- AOE Start -------------------------
     -- AOE
     -------------- AOE End -------------------------
+    -- DBT optization
+        if talent(maget.ThermalVoid) and castable(mage.icelance, "target") and (buffstack(mage.fingersoffrost, "player") > 0) and buff(mage.icyveins, "player")then
+                  cast(mage.icelance, "target")
+        end
     -- Ice Lance + flurry
         -- actions+=/ice_lance,if=buff.fingers_of_frost.react=0&prev_gcd.flurry
-        if castable(mage.icelance, "target") and ((buffstack(mage.fingersoffrost, "player") == 0)) and lastspell(mage.flurry)then
+        -- had to remove castable/icelance
+        if ((buffstack(mage.fingersoffrost, "player") == 0)) and lastspell(mage.flurry)then
             cast(mage.icelance, "target")
         end
     -------------- CD'S Start -------------------------
     -- Cooldowns
         -- Function in Back end
+        cooldowns()
     -------------- CD'S END -------------------------
     -------------- Rotation 'S Start -------------------------
     -- Frost bolt w/ Water Jet (AMR)
         -- Frostbolt if IsPetCasting(PetWaterElemental, WaterJet)
-        if castable(mage.frostbolt, "target") and unitcasting(mage.waterjet, "pet") then
+        if castable(mage.frostbolt, "target") and unitcasting(mage.waterjet, "pet") and unitcasting(mage.frostbolt, "player")then
             cast(mage.frostbolt, "pettarget")
         end
     -- Water Jet (AMR)
@@ -43,7 +49,6 @@ function frostMageRotation()
     -- Ray of Frost (AMR)
         -- ray_of_frost,if=buff.icy_veins.up|(cooldown.icy_veins.remains>action.ray_of_frost.cooldown&buff.rune_of_power.down)
         -- if buff.icyVeins.exists or (cd.icyVeins > getCastTime(spell.rayOfFrost) and buff.runeOfPower.exists) then
-        -- RayOfFrost if HasBuff(IcyVeins)
         if talent(maget.RayofFrost) and castable(mage.rayoffrost, "target") and buff(mage.icyveins, "player")then -- OR LOGIC HALF DONE TODO
             cast(mage.rayoffrost, "target")
         end
@@ -51,6 +56,7 @@ function frostMageRotation()
         -- SimC | actions+=/flurry,if=buff.brain_freeze.react&buff.fingers_of_frost.react=0&prev_gcd.frostbolt
         if castable(mage.flurry, "target") and buff(mage.brainfreeze, "player") and (buffstack(mage.fingersoffrost, "player") == 0) and lastspell(mage.frostbolt)then
               cast(mage.flurry, "target")
+              cast(mage.icelance, "target")
         end
     -- Frozen Touch
         -- SimC | actions+=/frozen_touch,if=buff.fingers_of_frost.stack<=(0+artifact.icy_hand.enabled)&((cooldown.icy_veins.remains>30&talent.thermal_void.enabled)|!talent.thermal_void.enabled)
