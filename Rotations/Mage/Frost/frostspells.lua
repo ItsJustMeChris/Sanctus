@@ -18,23 +18,19 @@ mage = {
     icelance = 30455,
     icenova = 157997,
     icyveins = 12472,
+    mirrorimage = 55342,
     rayoffrost = 205021,
+    runeofpower = 116011,
     summonwaterelemental = 31687,
-    brainfreeze = 190447,
-    frostbomb = 112948,
     fingersoffrost = 112965,
-    chainreaction = 195418,
     zannesujourney = 226852,
     timewarp = 80353,
     waterjet = 135029,
-    icefloes = 108839,
-    icebarrier = 11426,
     winterschill = 228358,
     zannesujourney = 226852,
     rayoffrost = 205021,
 
 }
-
 
 maget = {
     RayofFrost = 22457,

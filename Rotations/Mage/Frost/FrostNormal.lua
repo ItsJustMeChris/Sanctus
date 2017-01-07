@@ -20,19 +20,20 @@ function frostMageRotation()
     -------------- AOE Start -------------------------
     -- AOE
     -------------- AOE End -------------------------
-    -- Ice Lance + Flurry (AMR)
+    -- Ice Lance + flurry
+        -- actions+=/ice_lance,if=buff.fingers_of_frost.react=0&prev_gcd.flurry
+        if castable(mage.icelance, "target") and ((buffstack(mage.fingersoffrost, "player") == 0)) and lastspell(mage.flurry)then
+            cast(mage.icelance, "target")
+        end
     -------------- CD'S Start -------------------------
-    -- CooldownsS
-    -- Function in Back end
+    -- Cooldowns
+        -- Function in Back end
     -------------- CD'S END -------------------------
     -------------- Rotation 'S Start -------------------------
     -- Frost bolt w/ Water Jet (AMR)
         -- Frostbolt if IsPetCasting(PetWaterElemental, WaterJet)
         if castable(mage.frostbolt, "target") and unitcasting(mage.waterjet, "pet") then
             cast(mage.frostbolt, "pettarget")
-        end
-        if castable(mage.icelance, "target") and lastspell(mage.frostbolt) then
-            cast(mage.icelance, "target")
         end
     -- Water Jet (AMR)
         -- water_jet,if=prev_gcd.frostbolt&buff.fingers_of_frost.stack<(2+artifact.icy_hand.enabled)&buff.brain_freeze.react=0
@@ -47,10 +48,8 @@ function frostMageRotation()
             cast(mage.rayoffrost, "target")
         end
     -- Flurry
-        -- Spell Flurry if HasBuff(BrainFreeze) and ((not HasBuff(FingersOfFrost) and not HasTalent(GlacialSpike)) or (HasTalent(GlacialSpike) and WasLastCast(Frostbolt)))
         -- SimC | actions+=/flurry,if=buff.brain_freeze.react&buff.fingers_of_frost.react=0&prev_gcd.frostbolt
-        if castable(mage.flurry, "target") and buff(mage.brainfreeze, "player") and (buffstack(mage.fingersoffrost, "player") == 0)then
-        -- and lastspell()
+        if castable(mage.flurry, "target") and buff(mage.brainfreeze, "player") and (buffstack(mage.fingersoffrost, "player") == 0) and lastspell(mage.frostbolt)then
               cast(mage.flurry, "target")
         end
     -- Frozen Touch

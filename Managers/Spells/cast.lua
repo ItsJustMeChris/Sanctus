@@ -42,3 +42,20 @@ function petcast(id, tar)
         end
     end
 end
+
+function casttime(spell)
+	local casttime = select(4,GetSpellInfo(spell))*.001
+	return casttime
+end
+
+function casttimeremain(tar)
+	if UnitCastingInfo(tar) ~= nil then
+		local remain = select(6,UnitCastingInfo(tar))*.001 - GetTime()
+    return remain
+	elseif UnitChannelInfo(tar) ~= nil then
+		local remain = select(6,UnitChannelInfo(tar))*.001 - GetTime()
+    return remain
+	else
+		return 0
+	end
+end
